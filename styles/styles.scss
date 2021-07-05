@@ -1,0 +1,392 @@
+/* VARIABLES
+-----------------------------------------------*/
+@import './styles/_variables';
+/* RESET
+----------------------------------------------- */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+  overflow: hidden;
+}
+
+/* MAIN STYLES 
+------------------------------------------------ */
+main {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#wrapper {
+    height: 95vh;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('/images/background3.png');
+    border-radius: 25px;
+}
+
+
+
+/* HEADING & FORM STYLES 
+------------------------------------------------ */
+header {
+    h1 {
+        font-size: 10vh;
+        color: white;
+        margin-top: 35px;
+    }
+    #form {
+      display: flex;
+      justify-content: space-around;
+    }
+    input {
+        margin-top: 25px;
+        height: 25px;
+        background: transparent;
+        border: none;
+        outline: none;
+        border-bottom: 2px solid grey;
+        font-size: 20px;
+        color: white;
+        &::placeholder {
+            color: rgb(248, 247, 247);
+            font-size: 22px;
+        }
+    }
+    button {
+        font-size: 12px;
+        padding: 5px 8px 3.5px 8px;
+        border-radius: 3px;
+        border: none;
+        letter-spacing: 1px;
+        background-color: $redColor;
+        color: white;
+        cursor: pointer;
+        height: 30px;
+        margin-top: 18px;
+        margin-left: 10px;
+        &:hover {
+          opacity: 0.9;
+        }
+        &:active {
+          transform: translateY(2px);
+        }
+    } 
+    .msg {
+      color: red;
+      font-size: 2vw;
+      background-color: white;
+      padding: 5px;
+      margin: 0 auto;
+      border-radius: 10px;
+      display: none;
+      position: absolute;
+      top: 23%;
+      left: 29.75%;
+    }
+    #backBtn {
+      display: none;
+      position: absolute;
+      top: 30px;
+      left: 7%;
+      background-color: transparent;
+      color: white;
+      font-size: 40px;
+      text-decoration: none;
+    }  
+}
+
+
+/* AJAX SECTION 
+---------------------------------------------- */
+section {
+    margin-top: 40px;
+    height: 60vh;
+    width: 95%;
+}
+
+.cardWrapper {
+    height: 95%;
+    display: flex;
+    justify-content: center;
+    #currentCard {
+      animation-name: current_card;
+      animation-duration: 0.8s;
+    }
+    .card, .five-day-card {
+        margin-left: 1500px;
+        animation-name: card_animation;
+        animation-duration: 1s;
+        border-radius: 25px;
+        background-color: white;
+        width: 25%;
+        height: 98%;
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0px 10px grey;
+        display: none;
+        .day {
+          width: 80%;
+          margin-left: 15px;
+          margin-top: 5px;
+          position: relative;
+          top: 10px;
+          p {
+            color: grey;
+            text-align: center;
+            text-decoration: underline;
+          }
+        }
+        .cardHeading {
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            .fiveDayBtn {
+              height: 20px;
+              position: relative;
+              top: 10px; 
+              right: 3px;
+              background-color: $blueColor; 
+              border: none;
+              border-radius: 25px;
+              padding: 2px 7px 2px 7px;
+              cursor: pointer;
+              color: white;
+              display: none;
+            }
+            #fiveDayBtnGPS {
+              height: 20px;
+              position: relative;
+              top: 10px; 
+              right: 3px;
+              background-color: $blueColor; 
+              border: none;
+              border-radius: 25px;
+              padding: 2px 7px 2px 7px;
+              cursor: pointer;
+              color: white;
+              display: none; 
+            }
+            #fiveDayBtn2 {
+              height: 20px;
+              position: relative;
+              top: 10px; 
+              right: 3px;
+              background-color: $blueColor; 
+              border: none;
+              border-radius: 25px;
+              padding: 2px 7px 2px 7px;
+              cursor: pointer;
+              color: white;
+              display: none;
+            }
+            #fiveDayBtnGPS2 {
+              height: 20px;
+              position: relative;
+              top: 10px; 
+              right: 3px;
+              background-color: $blueColor;
+              border: none;
+              border-radius: 25px;
+              padding: 2px 7px 2px 7px;
+              cursor: pointer;
+              color: white;
+              display: none; 
+            }
+            .city-name {
+                 padding: 22px 0px 25px 25px; 
+                 padding-top: 35px;
+                 font-size: 22px;
+                 margin-top: 5px;
+                 color: rgb(107, 107, 107);
+             }
+             .country {
+                 background-color: orange;
+                 border-radius: 5px;  
+                 padding: 4px 2px 2px 3.5px;
+                 margin-left: 5px;  
+                 font-size: 15px;
+                 color: white;  
+                 width: 27px; 
+                 height: 23px;
+                 position: relative;
+                 top: 35px; 
+                 left: 0px;
+                 letter-spacing: 1px;
+             }
+        }
+        .cardTemp {
+            display: flex;
+            flex-direction: row;
+            font-size: 5vh;
+            .temp {
+                 padding: 15px 0px 0px 15px;
+                 font-size: 9vh;
+                 width: 25%;
+             } 
+             .temp-five-one, .temp-five-two, .temp-five-three, .temp-five-four, .temp-five-five {
+               font-size: 2vw;
+               width: 100%;
+             }
+             .f-c {
+                margin-top: 20px;
+                font-size: smaller;
+                height: 100%;
+                &:hover {
+                  cursor: pointer;
+                }
+            }
+            .cel {
+              color: lightgrey;
+            }
+            #cel2 {
+              display: none;
+              color: lightgrey;
+            }
+            #fah2 {
+              display: none;
+            }
+        }
+        .cardIcon {
+            height: 25%;
+            .desc {
+                padding: 15px;
+                color: rgb(107, 107, 107);
+                margin-bottom: 50px;
+                width: 100%;
+            }
+        }
+    }
+    .five-day-card {
+      min-width: 200px;
+    }
+}
+
+
+//ANIMATIONS
+/******5-Day Forecast**********/
+@keyframes card_animation {
+  from {margin-left: 1500px;}
+  to {margin-left: 0px;}
+}
+/******Current Weather**********/
+@keyframes current_card {
+  from {margin-top: 1500px;}
+  to {margin-top: 0px;}
+}
+
+
+// Responsive Media Queries
+/* (375px and down) */
+@media only screen and (max-width: 375px) {
+  .temp {
+    margin-right: 10px;
+  }
+}
+/*(600px and down) */
+@media only screen and (max-width: 600px) {
+  .card, .five-day-card {
+    width: 80% !important;
+    height: 350px !important;
+    margin-bottom: 45px !important;
+  }
+  .five-day-card {
+    height: 375px !important;
+  }
+}
+
+@media only screen and (width: 768px) {
+  .card, .five-day-card {
+    width: 60% !important;
+    height: 550px !important;
+    margin-bottom: 75px !important;
+  }
+  .day {
+    font-size: 3vw !important;
+  }
+  .city-name, .city-name-five {
+    font-size: 4vw !important;
+  }
+  .desc, .desc-five-one, .desc-five-two, .desc-five-three, .desc-five-four, .desc-five-five {
+    font-size: 3vw !important;
+  }
+}
+
+/*(1024px and down) */
+@media only screen and (max-width: 1024px) {
+  #wrapper {
+    width: 100vw;
+    height: 100vh !important;
+    border-radius: 0px;
+  }
+  header {
+    h1 {
+      font-size: 12vw;
+      text-align: center;
+    }
+  }
+  #form {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin: 5px;
+    button {
+      margin: 0px;
+    }
+    #btn {
+      margin: 7px 0px 3px 0px;
+    }
+  }
+  .cardWrapper {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+  }
+  .five-day-card {
+    .day {
+      font-size: 5vw;
+    }
+    .temp-five-one, .temp-five-two, .temp-five-three, .temp-five-four, .temp-five-five {
+      font-size: 10vw !important;
+    }
+  }
+  body {
+    overflow: scroll;
+    scroll-behavior: smooth;
+  }
+  html {
+    background-image: url('/images/background3.png');
+  }
+  #backBtn {
+    position: absolute;
+    top: 0px !important;
+    left: 5px !important;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    margin-top: 10px;
+  }
+}
+
+@media only screen and (width: 1024px) {
+  .card, .five-day-card {
+    width: 60% !important;
+    height: 550px !important;
+    margin-bottom: 75px !important;
+  }
+  .city-name, .city-name-five, .desc, .day {
+    font-size: 3vw !important;
+  }
+}
