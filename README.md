@@ -1,2 +1,2 @@
 # weather_app
-Simple Weather App
+Simple Weather App using openweather data API
