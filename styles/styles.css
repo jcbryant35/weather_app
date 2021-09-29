@@ -401,6 +401,10 @@ section {
 
 /*(600px and down) */
 @media only screen and (max-width: 600px) {
+  #form {
+    border: 2px solid red;
+    width: 100%;
+  }
   .card, .five-day-card {
     width: 80% !important;
     height: 350px !important;
